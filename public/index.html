@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+    <title><%= htmlWebpackPlugin.options.title %></title>
+  </head>
+  <body>
+    <noscript>
+      <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+    </noscript>
+    <div id="app"></div>
+    
+    <!-- built files will be auto injected -->
+    <script>
+      var i = 0;
+function move(appbar,value,asycSec) {
+  if (i == 0) {
+    i = 1;
+    var elem = document.getElementById(appbar);
+    var width = 5;
+    var id = setInterval(frame, asycSec);
+    function frame() {
+      if (width >= value) {
+        clearInterval(id);
+        i = 0;
+      } else {
+        width++;
+        elem.style.width = width+ "%";
+        document.getElementById(appbar +'-value').innerHTML = width + "%";
+      }
+    }
+  }
+}
+onload = function(){move("java",85,20);
+i=0;
+move("dart",70,35);
+i=0;
+move("python",65,50);
+i=0;
+move("english",70,40);
+i=0;
+move("japanese",65,45);
+}
+    </script>
+  </body>
+</html>
